@@ -1,3 +1,10 @@
 .service-area {
     padding: 100px 0;
 }
+.section-info h6 {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+.section-info h2 {
+    font-size: 40px;
+}

@@ -1,0 +1,18 @@
+.instruction-area {
+    padding: 100px 0;
+    background: red;
+}
+.arrow-box {
+    position: relative;
+}
+.arrow-box img {
+    position: absolute;
+    right: -40px;
+    top: 30%;
+}
+.ins-content h6 {
+    font-size: 22px;
+}
+.ins-content h2 {
+    font-size: 40px;
+}
