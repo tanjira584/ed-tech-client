@@ -1,0 +1,16 @@
+.header-top {
+    padding: 13px 0;
+}
+.social-icon ul {
+    list-style: none;
+}
+.social-icon ul li {
+    display: inline;
+    margin-left: 8px;
+}
+.social-icon ul li a {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 4px;
+}

@@ -1,9 +1,13 @@
 import "./App.css";
+import Footer from "./components/share/Footer";
+import Header from "./components/share/Header";
 
 function App() {
     return (
-        <div className="App">
-            <h2 className="text-danger text-center">Hello world</h2>
+        <div className="">
+            <Header></Header>
+            <div style={{ height: "500px" }}></div>
+            <Footer></Footer>
         </div>
     );
 }
