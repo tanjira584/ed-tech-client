@@ -1,0 +1,9 @@
+.banner-area {
+    padding: 150px 0;
+    padding-top: 226px;
+    background-image: linear-gradient(90deg, #232021 0, #0093c8);
+}
+.banner-content h1 {
+    font-size: 66px;
+    margin-bottom: 26px;
+}

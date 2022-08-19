@@ -1,5 +1,6 @@
 .header-top {
     padding: 13px 0;
+    padding-bottom: 23px;
 }
 .social-icon ul {
     list-style: none;
@@ -13,4 +14,12 @@
     padding: 8px 12px;
     background: #fff;
     border-radius: 4px;
+}
+.header-main {
+    margin-top: -10px;
+    margin-bottom: -76px;
+}
+.header-main nav {
+    border-radius: 4px;
+    padding: 20px 0;
 }

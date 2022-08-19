@@ -1,13 +1,10 @@
 import "./App.css";
-import Footer from "./components/share/Footer";
-import Header from "./components/share/Header";
+import Home from "./components/home/Home";
 
 function App() {
     return (
         <div className="">
-            <Header></Header>
-            <div style={{ height: "500px" }}></div>
-            <Footer></Footer>
+            <Home></Home>
         </div>
     );
 }

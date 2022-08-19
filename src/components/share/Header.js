@@ -80,7 +80,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <header className="header-main">
+            <header className="header-main container-md">
                 <nav class="navbar navbar-expand-lg bg-light">
                     <div class="container-md">
                         <h2>
