@@ -1,0 +1,9 @@
+.feedback-area {
+    padding: 100px 0;
+    background-color: #f7f5f4;
+}
+.user-img {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}

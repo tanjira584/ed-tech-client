@@ -13,7 +13,9 @@ const ServicesSection = () => {
                         <h2>Our Courses</h2>
                     </div>
                     <div>
-                        <button className="btn btn-danger">View More</button>
+                        <button className="btn btn-danger btn-lg">
+                            View More
+                        </button>
                     </div>
                 </div>
                 <div className="row g-5">
