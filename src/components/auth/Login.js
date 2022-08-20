@@ -1,6 +1,7 @@
 import React from "react";
 import loginbg from "./../../images/loginbg.jpg";
 import "./Auth.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -14,7 +15,9 @@ const Login = () => {
                 <div className="col-md-6 position-relative">
                     <div className="login-form">
                         <div className="text-center mb-4">
-                            <h2 className="mb-4 fw-bold">Ed-Tech</h2>
+                            <h2 className="mb-4 fw-bold">
+                                <Link to="/">Ed-Tech</Link>
+                            </h2>
                             <h3>Welcome Back</h3>
                             <span>Login with your site account</span>
                         </div>
@@ -47,9 +50,11 @@ const Login = () => {
                         </div>
                         <p className="m-0 text-center">
                             Not a member yet?{" "}
-                            <button className="btn text-danger border-0">
-                                Register now
-                            </button>
+                            <Link to="/signup">
+                                <button className="btn text-danger border-0">
+                                    Register now
+                                </button>
+                            </Link>
                         </p>
                     </div>
                 </div>

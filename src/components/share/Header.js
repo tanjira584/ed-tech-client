@@ -3,7 +3,7 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
-
+import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <div>
@@ -115,12 +115,12 @@ const Header = () => {
                                 <a class="nav-link" href=" ">
                                     About us
                                 </a>
-                                <a class="nav-link" href=" ">
+                                <Link class="nav-link" to="/services">
                                     Services
-                                </a>
-                                <a class="nav-link" href=" ">
+                                </Link>
+                                <Link class="nav-link" to="/login">
                                     Login
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

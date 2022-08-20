@@ -1,6 +1,7 @@
 import React from "react";
 import signupbg from "./../../images/signup-bg.jpg";
 import "./Auth.css";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
     return (
@@ -14,7 +15,9 @@ const Signup = () => {
                 <div className="col-md-6 position-relative">
                     <div className="signup-form">
                         <div className="text-center mb-4">
-                            <h2 className="mb-4 fw-bold">Ed-Tech</h2>
+                            <h2 className="mb-4 fw-bold">
+                                <Link to="/">Ed-Tech</Link>
+                            </h2>
                             <h3>Open up your Edali Account</h3>
                             <span>Welcome to Ed-Tech</span>
                         </div>
@@ -52,9 +55,11 @@ const Signup = () => {
                         </div>
                         <p className="m-0 text-center">
                             Have an account?
-                            <button className="btn border-0 text-primary">
-                                Login now
-                            </button>
+                            <Link to="/login">
+                                <button className="btn border-0 text-primary">
+                                    Login now
+                                </button>
+                            </Link>
                         </p>
                     </div>
                 </div>
