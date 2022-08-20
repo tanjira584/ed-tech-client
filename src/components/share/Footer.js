@@ -1,8 +1,14 @@
-import { faAddressBook } from "@fortawesome/free-regular-svg-icons";
+import { faAddressBook, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import {
+    faFacebookF,
+    faInstagram,
+    faLinkedinIn,
+    faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import "./Footer.css";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     return (
@@ -16,7 +22,8 @@ const Footer = () => {
                                 <div className="d-flex mb-3">
                                     <div className="me-2">
                                         <FontAwesomeIcon
-                                            icon={faAddressBook}
+                                            className="icon"
+                                            icon={faLocationDot}
                                         ></FontAwesomeIcon>
                                     </div>
                                     <div>
@@ -27,24 +34,20 @@ const Footer = () => {
                                 <div className="d-flex mb-3">
                                     <div className="me-2">
                                         <FontAwesomeIcon
-                                            icon={faAddressBook}
+                                            className="icon"
+                                            icon={faPhone}
                                         ></FontAwesomeIcon>
                                     </div>
-                                    <div>
-                                        2750 Quadra Street Victoria Road, New
-                                        York, Canada
-                                    </div>
+                                    <div>+8801613071257</div>
                                 </div>
                                 <div className="d-flex ">
                                     <div className="me-2">
                                         <FontAwesomeIcon
-                                            icon={faAddressBook}
+                                            className="icon"
+                                            icon={faEnvelope}
                                         ></FontAwesomeIcon>
                                     </div>
-                                    <div>
-                                        2750 Quadra Street Victoria Road, New
-                                        York, Canada
-                                    </div>
+                                    <div>tanjira584@gmail.com</div>
                                 </div>
                                 <div className="footer-icon">
                                     <ul className="m-0 p-0">
@@ -58,21 +61,21 @@ const Footer = () => {
                                         <li>
                                             <a href=" ">
                                                 <FontAwesomeIcon
-                                                    icon={faFacebookF}
+                                                    icon={faTwitter}
                                                 ></FontAwesomeIcon>
                                             </a>
                                         </li>
                                         <li>
                                             <a href=" ">
                                                 <FontAwesomeIcon
-                                                    icon={faFacebookF}
+                                                    icon={faInstagram}
                                                 ></FontAwesomeIcon>
                                             </a>
                                         </li>
                                         <li>
                                             <a href=" ">
                                                 <FontAwesomeIcon
-                                                    icon={faFacebookF}
+                                                    icon={faLinkedinIn}
                                                 ></FontAwesomeIcon>
                                             </a>
                                         </li>

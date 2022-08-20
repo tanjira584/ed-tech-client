@@ -23,3 +23,15 @@
     border-radius: 4px;
     padding: 20px 0;
 }
+.address-bar .box .icon {
+    font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+    .header-main nav {
+        border-radius: 0px;
+    }
+    .header-main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

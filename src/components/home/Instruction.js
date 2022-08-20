@@ -1,8 +1,13 @@
 import React from "react";
 import "./Instruction.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+    faPhoneAlt,
+    faRightToBracket,
+    faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import arrow from "../../images/arrow.png";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 const Instruction = () => {
     return (
         <div className="instruction-area">
@@ -17,7 +22,8 @@ const Instruction = () => {
                             <img src={arrow} alt="" />
                             <div className="mb-3">
                                 <FontAwesomeIcon
-                                    icon={faPhoneAlt}
+                                    className="icon"
+                                    icon={faSearch}
                                 ></FontAwesomeIcon>
                             </div>
                             <h4>Search Courses</h4>
@@ -33,7 +39,8 @@ const Instruction = () => {
                             <img src={arrow} alt="" />
                             <div className="mb-3">
                                 <FontAwesomeIcon
-                                    icon={faPhoneAlt}
+                                    className="icon"
+                                    icon={faFileLines}
                                 ></FontAwesomeIcon>
                             </div>
                             <h4>View Course Details</h4>
@@ -48,7 +55,8 @@ const Instruction = () => {
                         <div className="arrow-box text-center p-4 text-light">
                             <div className="mb-3">
                                 <FontAwesomeIcon
-                                    icon={faPhoneAlt}
+                                    className="icon"
+                                    icon={faRightToBracket}
                                 ></FontAwesomeIcon>
                             </div>
                             <h4>Apply, Enroll or Register</h4>

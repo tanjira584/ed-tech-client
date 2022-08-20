@@ -1,8 +1,17 @@
-import React from "react";
-import ServiceSingle from "./../home/ServiceSingle";
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "./AllService.css";
+import { Link } from "react-router-dom";
 
 const AllService = () => {
+    const [courses, setCourses] = useState([]);
+    useEffect(() => {
+        fetch("https://young-meadow-06567.herokuapp.com/courses")
+            .then((res) => res.json())
+            .then((data) => setCourses(data));
+    }, []);
+
     return (
         <div className="service-area">
             <div className="container-md">
@@ -14,24 +23,44 @@ const AllService = () => {
                     </div>
                 </div>
                 <div className="row g-5">
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
-                    <div className="col-md-4">
-                        <ServiceSingle></ServiceSingle>
-                    </div>
+                    {courses.map((course) => (
+                        <div className="col-md-4" key={course._id}>
+                            <div className="service shadow">
+                                <div className="img">
+                                    <img
+                                        className="img-fluid"
+                                        src={course.img}
+                                        alt=""
+                                    />
+                                </div>
+                                <div className="body p-3">
+                                    <h4>{course.title}</h4>
+                                    <p className="m-0">
+                                        <FontAwesomeIcon
+                                            icon={faPhoneAlt}
+                                        ></FontAwesomeIcon>{" "}
+                                        by {course.mentor}
+                                    </p>
+                                    <hr />
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span className="text-danger fw-bold">
+                                                $ {course.price}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <Link
+                                                className="btn btn-danger btn-small"
+                                                to={`/course/${course._id}`}
+                                            >
+                                                Details
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

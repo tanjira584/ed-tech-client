@@ -3,7 +3,9 @@ import design from "../../images/design.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
-const ServiceSingle = () => {
+const ServiceSingle = (props) => {
+    const course = props.course;
+
     return (
         <div className="service shadow">
             <div className="img">

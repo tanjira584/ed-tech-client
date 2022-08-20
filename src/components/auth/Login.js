@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import loginbg from "./../../images/loginbg.jpg";
 import "./Auth.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import auth from "./../../../src/firebase.init";
+import {
+    useSignInWithEmailAndPassword,
+    useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
+    const [user, setUser] = useState({ email: "", password: "" });
+    const [signInWithGoogle, guser, gloading] = useSignInWithGoogle(auth);
+    const [signInWithEmailAndPassword, euser, eloading, eerror] =
+        useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
+    if (guser || euser) {
+        navigate(from, { replace: true });
+        toast(" Loggedin successfully");
+    }
+
+    if (eloading || gloading) {
+        return <p className="text-center mt-5">Loading....</p>;
+    }
+    const handleChange = (e) => {
+        setUser({ ...user, [e.target.name]: e.target.value });
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(user);
+        signInWithEmailAndPassword(user.email, user.password);
+        toast(" Loggedin successfully");
+        setUser({ name: "", email: "", password: "" });
+        e.target.reset();
+    };
     return (
         <div className="login-page">
             <div className="row">
@@ -21,16 +53,20 @@ const Login = () => {
                             <h3>Welcome Back</h3>
                             <span>Login with your site account</span>
                         </div>
-                        <form action="">
+                        <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 className="form-control mb-3"
                                 placeholder="Enter Email"
+                                name="email"
+                                onChange={handleChange}
                             />
                             <input
                                 type="text"
                                 className="form-control mb-3"
                                 placeholder="Enter Password"
+                                name="password"
+                                onChange={handleChange}
                             />
                             <input
                                 type="submit"
@@ -44,7 +80,10 @@ const Login = () => {
                             <div className="border w-50"></div>
                         </div>
                         <div>
-                            <button className="w-100 p-2">
+                            <button
+                                className="w-100 p-2"
+                                onClick={() => signInWithGoogle()}
+                            >
                                 Continue With Google
                             </button>
                         </div>

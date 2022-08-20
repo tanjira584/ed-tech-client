@@ -6,7 +6,7 @@ const Feedback = () => {
     return (
         <div className="feedback-area">
             <div className="container-md">
-                <div className="feedback-content w-50 m-auto">
+                <div className="feedback-content">
                     <p
                         className="mb-5"
                         style={{
@@ -19,7 +19,7 @@ const Feedback = () => {
                         you're taught a lesson and then given a test. In life,
                         you're given a test that teaches you a lesson.”
                     </p>
-                    <div className="d-flex justify-content-end align-items-center">
+                    <div className="d-flex justify-content-md-end justify-content-center align-items-center">
                         <div className="me-3">
                             <p className="m-0" style={{ fontSize: "22px" }}>
                                 James Anderson

@@ -1,19 +1,33 @@
 import React from "react";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import {
+    faFacebookF,
+    faInstagram,
+    faLinkedinIn,
+    faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const loggedOut = () => {
+        signOut(auth);
+    };
     return (
         <div>
-            <div className="header-top bg-danger text-light">
+            <div className="header-top bg-danger text-light d-none d-md-block">
                 <div className="container d-none d-md-block">
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="address-bar d-flex align-items-center">
                             <div className="box d-flex align-items-center me-4">
                                 <div className="me-2">
                                     <FontAwesomeIcon
+                                        className="icon"
                                         icon={faPhoneAlt}
                                     ></FontAwesomeIcon>
                                 </div>
@@ -25,23 +39,25 @@ const Header = () => {
                             <div className="box d-flex align-items-center me-4">
                                 <div className="me-2">
                                     <FontAwesomeIcon
-                                        icon={faPhoneAlt}
+                                        className="icon"
+                                        icon={faLocationDot}
                                     ></FontAwesomeIcon>
                                 </div>
                                 <div>
-                                    <span>Contact Support</span>
-                                    <p className="m-0">+8801613071257</p>
+                                    <span>Our Location</span>
+                                    <p className="m-0">+New York, USA</p>
                                 </div>
                             </div>
                             <div className="box d-flex align-items-center me-3">
                                 <div className="me-2">
                                     <FontAwesomeIcon
-                                        icon={faPhoneAlt}
+                                        className="icon"
+                                        icon={faEnvelope}
                                     ></FontAwesomeIcon>
                                 </div>
                                 <div>
-                                    <span>Contact Support</span>
-                                    <p className="m-0">+8801613071257</p>
+                                    <span>Contact email</span>
+                                    <p className="m-0">tanjira584@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -57,21 +73,21 @@ const Header = () => {
                                 <li>
                                     <a href=" ">
                                         <FontAwesomeIcon
-                                            icon={faFacebookF}
+                                            icon={faTwitter}
                                         ></FontAwesomeIcon>
                                     </a>
                                 </li>
                                 <li>
                                     <a href=" ">
                                         <FontAwesomeIcon
-                                            icon={faFacebookF}
+                                            icon={faInstagram}
                                         ></FontAwesomeIcon>
                                     </a>
                                 </li>
                                 <li>
                                     <a href=" ">
                                         <FontAwesomeIcon
-                                            icon={faFacebookF}
+                                            icon={faLinkedinIn}
                                         ></FontAwesomeIcon>
                                     </a>
                                 </li>
@@ -80,17 +96,17 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <header className="header-main container-md">
-                <nav class="navbar navbar-expand-lg bg-light">
-                    <div class="container-md">
+            <header className="header-main container-md px-0">
+                <nav className="navbar navbar-expand-lg bg-light">
+                    <div className="container-md">
                         <h2>
-                            <a class="" href=" ">
+                            <Link className="" to="/">
                                 Ed-Tech
-                            </a>
+                            </Link>
                         </h2>
 
                         <button
-                            class="navbar-toggler"
+                            className="navbar-toggler"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup"
@@ -98,29 +114,38 @@ const Header = () => {
                             aria-expanded="false"
                             aria-label="Toggle navigation"
                         >
-                            <span class="navbar-toggler-icon"></span>
+                            <span className="navbar-toggler-icon"></span>
                         </button>
                         <div
-                            class="collapse navbar-collapse "
+                            className="collapse navbar-collapse "
                             id="navbarNavAltMarkup"
                         >
-                            <div class="navbar-nav ms-auto">
-                                <a
-                                    class="nav-link active"
+                            <div className="navbar-nav ms-auto">
+                                <Link
+                                    className="nav-link active"
                                     aria-current="page"
-                                    href=" "
+                                    to="/"
                                 >
                                     Home
-                                </a>
-                                <a class="nav-link" href=" ">
+                                </Link>
+                                <Link className="nav-link" to="/">
                                     About us
-                                </a>
-                                <Link class="nav-link" to="/services">
+                                </Link>
+                                <Link className="nav-link" to="/services">
                                     Services
                                 </Link>
-                                <Link class="nav-link" to="/login">
-                                    Login
-                                </Link>
+                                {user ? (
+                                    <button
+                                        className="border-0 text-start bg-transparent p-0"
+                                        onClick={loggedOut}
+                                    >
+                                        Signout
+                                    </button>
+                                ) : (
+                                    <Link className="nav-link" to="/login">
+                                        Login
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </div>
